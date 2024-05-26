@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Train Timetable</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assests/railway-logo.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .availability {
+      text-align: center;
+    }
+
+    .available {
+      color: green;
+      font-weight: bold;
+    }
+
+    .waiting-list {
+      color: red;
+      font-weight: bold;
+    }
+
+    #generateBtn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    @media (max-width: 768px) {
+        #trainTable{
+            overflow-x: scroll;
+        }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">Railway Reservation</div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/train.html">Trains</a></li>
+        <li><a href="/login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Random Train Timetable</h1>
+    <button id="generateBtn">Generate Timetable</button>
+    <table id="trainTable">
+      <thead>
+        <tr>
+          <th>Train Name</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th class="nope">Availability</th>
+        </tr>
+      </thead>
+      <tbody id="trainTableBody">
+        <!-- Train details will be added here -->
+      </tbody>
+    </table>
+  </div>
+  <script>
+    const trainNames = ['Express', 'Superfast', 'Local', 'Shatabdi', 'Duronto', 'Jan Shatabdi'];
+    const cities = ['Noida', 'Kolkata', 'Mumbai', 'Chennai', 'Pune', 'Bhopal', 'Lucknow', 'Patna', 'Nagpur', 'Surat', 'Ranchi', 'Bhubaneswar', 'Madurai', 'Kochi', 'Amritsar', 'Shimla', 'Dehradun', 'Varanasi', 'Rajkot', 'Udaipur', 'Gwalior', 'Jodhpur', 'Mysore', 'Vijayawada', 'Aurangabad', 'Salem', 'Tiruchirapalli', 'Jabalpur', 'Srinagar', 'Panaji', 'Agartala', 'Aizawl', 'Shillong', 'Kohima', 'Itanagar', 'Gangtok', 'Dispur', 'Raipur', 'Dhanbad', 'Kullu', 'Ambala', 'Anantnag', 'Bangalore', 'Pondicherry', 'Siliguri', 'Delhi', 'Warangal', 'Gaya', 'Allahabad', 'Ujjain', 'Katni', 'Jaipur'];
+
+    function getRandomTrainName() {
+      return trainNames[Math.floor(Math.random() * trainNames.length)];
+    }
+
+    function getRandomCity() {
+      return cities[Math.floor(Math.random() * cities.length)];
+    }
+
+    function getRandomTime() {
+      const hour = Math.floor(Math.random() * 12) + 1;
+      const minute = Math.floor(Math.random() * 60);
+      const ampm = Math.random() < 0.5 ? 'AM' : 'PM';
+      return `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')} ${ampm}`;
+    }
+
+    function generateRandomAvailability() {
+      return Math.random() < 0.7 ? 'Available' : 'Waiting List';
+    }
+
+    function generateRandomTrainDetails() {
+      const trainName = getRandomTrainName();
+      const from = getRandomCity();
+      let to;
+      do {
+        to = getRandomCity();
+      } while (to === from);
+
+      const departure = getRandomTime();
+      const arrival = getRandomTime();
+      const availability = generateRandomAvailability();
+
+      return {
+        trainName,
+        from,
+        to,
+        departure,
+        arrival,
+        availability
+      };
+    }
+
+    document.getElementById('generateBtn').addEventListener('click', () => {
+      const trainTableBody = document.getElementById('trainTableBody');
+      trainTableBody.innerHTML = '';
+
+      for (let i = 0; i < 25; i++) {
+        const trainDetails = generateRandomTrainDetails();
+        const row = document.createElement('tr');
+        row.innerHTML = `
+      <td>${trainDetails.trainName}</td>
+      <td>${trainDetails.from}</td>
+      <td>${trainDetails.to}</td>
+      <td>${trainDetails.departure}</td>
+      <td>${trainDetails.arrival}</td>
+      <td class="availability ${trainDetails.availability === 'Available' ? 'available' : 'waiting-list'}">
+        ${trainDetails.availability}
+      </td>
+    `;
+        trainTableBody.appendChild(row);
+      }
+    });
+  </script>
+  <!-- <script src="script.js"></script> -->
+</body>
+
+</html>
