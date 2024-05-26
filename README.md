@@ -13,15 +13,10 @@ The Railway Reservation System is a responsive web application designed using HT
 - **HTML**: For structuring the content.
 - **CSS**: For styling the application.
 - **JavaScript**: For adding interactivity and dynamic content.
-- **Hosting**: [Link to the hosted project](https://affancoder.github.io/Railway-Reservation-System/)
-
-## Screenshots
-![Home Page](link-to-screenshot)
-![Booking Page](link-to-screenshot)
-![Confirmation Page](link-to-screenshot)
+- **Hosting**: [Tap here](https://railway-reservation-system-grp3.vercel.app/)
 
 ## Live Demo
-Check out the live demo [here](#).
+Check out the live demo [here](https://railway-reservation-system-grp3.vercel.app/).
 
 ## Getting Started
 To get a local copy up and running, follow these simple steps.
