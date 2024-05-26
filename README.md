@@ -49,5 +49,4 @@ Contributions are what make the open-source community such an amazing place to b
 
 ## Contact
 MD Affan Asghar - [affanasgar8@gmail.com](mailto:affanasgar8@gmail.com)
-
-Project Link: [https://github.com/yourusername/railway-reservation-system](https://affancoder.github.io/Railway-Reservation-System/)
+Full Stack Web Developer
