@@ -33,7 +33,7 @@ To get a local copy up and running, follow these simple steps.
 ### Installation
 1. Clone the repo
    sh
-   git clone https://github.com/yourusername/railway-reservation-system.git
+   git clone https://github.com/affancoder/railway-reservation-system.git
    
 2. Open the `index.html` file in your browser to view the application locally.
 
