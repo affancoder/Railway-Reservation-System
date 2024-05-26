@@ -1,0 +1,136 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.search-section {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    text-align: center;
+}
+
+.search-section h1 {
+    margin-bottom: 1rem;
+}
+
+.search-section form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.search-section form input,
+.search-section form button {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.results-section {
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.train-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.train-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.train-info h2 {
+    margin: 0;
+}
+
+.train-info p {
+    margin: 0.5rem 0 0 0;
+    color: #666;
+}
+
+.book-button {
+    background-color: #003366;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book-button:hover {
+    background-color: #002244;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    /* padding: 1rem; */
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width:600px) {
+    html,body{
+        height: 100%;
+        width: 100%;
+    }
+    #search-form{
+        display: inline;
+    }
+    #search-form input{
+        width: 100%;
+    }
+    #search-form button{
+        margin: 10px;
+        border-radius: 14px;
+        background-color: green;
+        color: white;
+        height: 50px;
+        width: 140px;
+    }
+}

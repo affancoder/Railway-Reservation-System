@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Railway Reservation System</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Railway Reservation</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Trains</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="search-section">
+      <h1>Book Your Train Tickets</h1>
+      <form id="search-form">
+        <input type="text" placeholder="kolkata" required>
+        <input type="text" placeholder="delhi" required>
+        <input type="date" placeholder="Journey Date" required>
+        <button type="submit">Search</button>
+      </form>
+    </section>
+    <section class="results-section" id="results-section">
+      <!-- Search results will be displayed here -->
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Railway Reservation System</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
