@@ -49,4 +49,3 @@ Contributions are what make the open-source community such an amazing place to b
 
 ## Contact
 MD Affan Asghar - [affanasgar8@gmail.com](mailto:affanasgar8@gmail.com)
-Full Stack Web Developer
