@@ -12,7 +12,41 @@
       font-family: Arial, sans-serif;
       background-color: #f4f4f9;
       margin: 0;
-      padding: 20px;
+      /* padding: 20px; */
+    }
+
+    .navbar{
+      width: 100% !important;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      /* padding: 1rem; */
+      text-align: center; 
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100vw;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
     }
 
     .container {
@@ -75,17 +109,18 @@
       cursor: pointer;
       border-radius: 5px;
     }
+
     @media (max-width: 768px) {
-        #trainTable{
-            overflow-x: scroll;
-        }
+      #trainTable {
+        overflow-x: scroll;
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <nav>
+    <nav class="navbar">
       <div class="logo">Railway Reservation</div>
       <ul>
         <li><a href="/">Home</a></li>
@@ -113,6 +148,11 @@
       </tbody>
     </table>
   </div>
+  <div style="height: 160px;"></div>
+  <footer>
+    <p>&copy; 2024 Railway Reservation System</p>
+    <p>Made by Group No.3 </p>
+  </footer>
   <script>
     const trainNames = ['Express', 'Superfast', 'Local', 'Shatabdi', 'Duronto', 'Jan Shatabdi'];
     const cities = ['Noida', 'Kolkata', 'Mumbai', 'Chennai', 'Pune', 'Bhopal', 'Lucknow', 'Patna', 'Nagpur', 'Surat', 'Ranchi', 'Bhubaneswar', 'Madurai', 'Kochi', 'Amritsar', 'Shimla', 'Dehradun', 'Varanasi', 'Rajkot', 'Udaipur', 'Gwalior', 'Jodhpur', 'Mysore', 'Vijayawada', 'Aurangabad', 'Salem', 'Tiruchirapalli', 'Jabalpur', 'Srinagar', 'Panaji', 'Agartala', 'Aizawl', 'Shillong', 'Kohima', 'Itanagar', 'Gangtok', 'Dispur', 'Raipur', 'Dhanbad', 'Kullu', 'Ambala', 'Anantnag', 'Bangalore', 'Pondicherry', 'Siliguri', 'Delhi', 'Warangal', 'Gaya', 'Allahabad', 'Ujjain', 'Katni', 'Jaipur'];
